@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listado_Venta">
+        <s:complexType />
+      </s:element>
+      <s:element name="listado_VentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listado_VentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_Venta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idFactura" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoTotal" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_VentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_VentaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_detalleVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idFactura" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoCombustible" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFormaPago" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idBombaCombustible" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_detalleVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_detalleVentaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_Venta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFactura" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTIpoCombustible" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFormaPago" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idBombaCombustible" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidadVendida" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalAPagar" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_VentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_VentaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_Venta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFactura" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_VentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_VentaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listado_VentaSoapIn">
+    <wsdl:part name="parameters" element="tns:listado_Venta" />
+  </wsdl:message>
+  <wsdl:message name="listado_VentaSoapOut">
+    <wsdl:part name="parameters" element="tns:listado_VentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_VentaSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_Venta" />
+  </wsdl:message>
+  <wsdl:message name="insertar_VentaSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_VentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_detalleVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_detalleVenta" />
+  </wsdl:message>
+  <wsdl:message name="insertar_detalleVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_detalleVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_VentaSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_Venta" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_VentaSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_VentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_VentaSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_Venta" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_VentaSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_VentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsVentaSoap">
+    <wsdl:operation name="listado_Venta">
+      <wsdl:input message="tns:listado_VentaSoapIn" />
+      <wsdl:output message="tns:listado_VentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Venta">
+      <wsdl:input message="tns:insertar_VentaSoapIn" />
+      <wsdl:output message="tns:insertar_VentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_detalleVenta">
+      <wsdl:input message="tns:insertar_detalleVentaSoapIn" />
+      <wsdl:output message="tns:insertar_detalleVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Venta">
+      <wsdl:input message="tns:actualizar_VentaSoapIn" />
+      <wsdl:output message="tns:actualizar_VentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Venta">
+      <wsdl:input message="tns:eliminar_VentaSoapIn" />
+      <wsdl:output message="tns:eliminar_VentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsVentaSoap" type="tns:wsVentaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_Venta">
+      <soap:operation soapAction="http://tempuri.org/listado_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Venta">
+      <soap:operation soapAction="http://tempuri.org/insertar_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_detalleVenta">
+      <soap:operation soapAction="http://tempuri.org/insertar_detalleVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Venta">
+      <soap:operation soapAction="http://tempuri.org/actualizar_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Venta">
+      <soap:operation soapAction="http://tempuri.org/eliminar_Venta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsVentaSoap12" type="tns:wsVentaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_Venta">
+      <soap12:operation soapAction="http://tempuri.org/listado_Venta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Venta">
+      <soap12:operation soapAction="http://tempuri.org/insertar_Venta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_detalleVenta">
+      <soap12:operation soapAction="http://tempuri.org/insertar_detalleVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Venta">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_Venta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Venta">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_Venta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsVenta">
+    <wsdl:port name="wsVentaSoap" binding="tns:wsVentaSoap">
+      <soap:address location="http://localhost/pruebas/pruebas/wsVenta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsVentaSoap12" binding="tns:wsVentaSoap12">
+      <soap12:address location="http://localhost/pruebas/pruebas/wsVenta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
