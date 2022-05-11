@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listado_sucursales">
+        <s:complexType />
+      </s:element>
+      <s:element name="listado_sucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listado_sucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_sucursalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionSucursal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefonoSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_sucursalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionSucursal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefonoSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_sucursalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_sucursalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listado_sucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:listado_sucursales" />
+  </wsdl:message>
+  <wsdl:message name="listado_sucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:listado_sucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="buscar_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="insertar_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsSucursalSoap">
+    <wsdl:operation name="listado_sucursales">
+      <wsdl:input message="tns:listado_sucursalesSoapIn" />
+      <wsdl:output message="tns:listado_sucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_sucursal">
+      <wsdl:input message="tns:buscar_sucursalSoapIn" />
+      <wsdl:output message="tns:buscar_sucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_sucursal">
+      <wsdl:input message="tns:insertar_sucursalSoapIn" />
+      <wsdl:output message="tns:insertar_sucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_sucursal">
+      <wsdl:input message="tns:actualizar_sucursalSoapIn" />
+      <wsdl:output message="tns:actualizar_sucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <wsdl:input message="tns:eliminar_sucursalSoapIn" />
+      <wsdl:output message="tns:eliminar_sucursalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsSucursalSoap" type="tns:wsSucursalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_sucursales">
+      <soap:operation soapAction="http://tempuri.org/listado_sucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_sucursal">
+      <soap:operation soapAction="http://tempuri.org/buscar_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_sucursal">
+      <soap:operation soapAction="http://tempuri.org/insertar_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_sucursal">
+      <soap:operation soapAction="http://tempuri.org/actualizar_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <soap:operation soapAction="http://tempuri.org/eliminar_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsSucursalSoap12" type="tns:wsSucursalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_sucursales">
+      <soap12:operation soapAction="http://tempuri.org/listado_sucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_sucursal">
+      <soap12:operation soapAction="http://tempuri.org/buscar_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_sucursal">
+      <soap12:operation soapAction="http://tempuri.org/insertar_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_sucursal">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsSucursal">
+    <wsdl:port name="wsSucursalSoap" binding="tns:wsSucursalSoap">
+      <soap:address location="http://localhost/pruebas/pruebas/wsSucursal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsSucursalSoap12" binding="tns:wsSucursalSoap12">
+      <soap12:address location="http://localhost/pruebas/pruebas/wsSucursal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

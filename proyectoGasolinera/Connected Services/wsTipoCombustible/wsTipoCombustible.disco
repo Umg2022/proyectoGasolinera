@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx?wsdl" docRef="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx" xmlns:q1="http://tempuri.org/" binding="q1:wsTipoCombustibleSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx" xmlns:q2="http://tempuri.org/" binding="q2:wsTipoCombustibleSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Listado_Tipo_De_Combustible">
+        <s:complexType />
+      </s:element>
+      <s:element name="Listado_Tipo_De_CombustibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Listado_Tipo_De_CombustibleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_Tipo_De_Combustible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreTipoCombustible" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioCombustibleAutoservicio" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioCombustibleServicioCompleto" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_Tipo_De_CombustibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insertar_Tipo_De_CombustibleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_Combustible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoCombustible" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreTipoCombustible" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioAutoservicio" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioServicioCOmpleto" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_CombustibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_CombustibleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_Combustible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoCombustible" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_CombustibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_CombustibleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_Combustible">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCombustible" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_CombustibleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_CombustibleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Listado_Tipo_De_CombustibleSoapIn">
+    <wsdl:part name="parameters" element="tns:Listado_Tipo_De_Combustible" />
+  </wsdl:message>
+  <wsdl:message name="Listado_Tipo_De_CombustibleSoapOut">
+    <wsdl:part name="parameters" element="tns:Listado_Tipo_De_CombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_Tipo_De_CombustibleSoapIn">
+    <wsdl:part name="parameters" element="tns:Insertar_Tipo_De_Combustible" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_Tipo_De_CombustibleSoapOut">
+    <wsdl:part name="parameters" element="tns:Insertar_Tipo_De_CombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_CombustibleSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_Combustible" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_CombustibleSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_CombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_CombustibleSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_Combustible" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_CombustibleSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_CombustibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_CombustibleSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_Combustible" />
+  </wsdl:message>
+  <wsdl:message name="buscar_CombustibleSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_CombustibleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsTipoCombustibleSoap">
+    <wsdl:operation name="Listado_Tipo_De_Combustible">
+      <wsdl:input message="tns:Listado_Tipo_De_CombustibleSoapIn" />
+      <wsdl:output message="tns:Listado_Tipo_De_CombustibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Tipo_De_Combustible">
+      <wsdl:input message="tns:Insertar_Tipo_De_CombustibleSoapIn" />
+      <wsdl:output message="tns:Insertar_Tipo_De_CombustibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Combustible">
+      <wsdl:input message="tns:actualizar_CombustibleSoapIn" />
+      <wsdl:output message="tns:actualizar_CombustibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Combustible">
+      <wsdl:input message="tns:eliminar_CombustibleSoapIn" />
+      <wsdl:output message="tns:eliminar_CombustibleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_Combustible">
+      <wsdl:input message="tns:buscar_CombustibleSoapIn" />
+      <wsdl:output message="tns:buscar_CombustibleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsTipoCombustibleSoap" type="tns:wsTipoCombustibleSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listado_Tipo_De_Combustible">
+      <soap:operation soapAction="http://tempuri.org/Listado_Tipo_De_Combustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Tipo_De_Combustible">
+      <soap:operation soapAction="http://tempuri.org/Insertar_Tipo_De_Combustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Combustible">
+      <soap:operation soapAction="http://tempuri.org/actualizar_Combustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Combustible">
+      <soap:operation soapAction="http://tempuri.org/eliminar_Combustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_Combustible">
+      <soap:operation soapAction="http://tempuri.org/buscar_Combustible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTipoCombustibleSoap12" type="tns:wsTipoCombustibleSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listado_Tipo_De_Combustible">
+      <soap12:operation soapAction="http://tempuri.org/Listado_Tipo_De_Combustible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Tipo_De_Combustible">
+      <soap12:operation soapAction="http://tempuri.org/Insertar_Tipo_De_Combustible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_Combustible">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_Combustible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_Combustible">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_Combustible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_Combustible">
+      <soap12:operation soapAction="http://tempuri.org/buscar_Combustible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsTipoCombustible">
+    <wsdl:port name="wsTipoCombustibleSoap" binding="tns:wsTipoCombustibleSoap">
+      <soap:address location="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTipoCombustibleSoap12" binding="tns:wsTipoCombustibleSoap12">
+      <soap12:address location="http://localhost/pruebas/pruebas/wsTipoCombustible.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
