@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5fd665b5-fe6f-48f8-86d5-c4c617992a57" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="6ac42ba9-0f9c-4be1-8805-037b8527c81f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/pruebas/pruebas/wsSucursal.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/pruebas/pruebas/wsUsuario.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="wsSucursal.disco" MetadataType="Disco" ID="d7ec4d08-d672-47e7-8e7e-829c1dea7d15" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsSucursal.asmx?disco" />
-    <MetadataFile FileName="wsSucursal.wsdl" MetadataType="Wsdl" ID="89a40735-7023-4a64-b1f7-b25ec01a6ec3" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsSucursal.asmx?wsdl" />
+    <MetadataFile FileName="wsUsuario.wsdl" MetadataType="Wsdl" ID="ee04cfd2-3e1a-4996-b4e4-8baf2c2b743f" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsUsuario.asmx?wsdl" />
+    <MetadataFile FileName="wsUsuario.disco" MetadataType="Disco" ID="f929208d-a17e-4dab-ac16-ef7904245b75" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsUsuario.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

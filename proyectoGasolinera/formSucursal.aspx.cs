@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 
 namespace consumirWS
@@ -15,6 +14,7 @@ namespace consumirWS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ws
             wsSucursal.wsSucursalSoapClient ws = new wsSucursal.wsSucursalSoapClient();
             DataSet ds = ws.listado_sucursales();
             GridView1.DataSource = ds.Tables[0];
