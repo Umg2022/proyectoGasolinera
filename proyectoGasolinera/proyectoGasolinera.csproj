@@ -96,13 +96,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\wsSucursal\wsSucursal.disco" />
-    <None Include="Connected Services\wsSucursal\configuration91.svcinfo" />
-    <None Include="Connected Services\wsSucursal\configuration.svcinfo" />
-    <None Include="Connected Services\wsSucursal\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\wsFormaPago\wsFormaPago.disco" />
     <None Include="Connected Services\wsFormaPago\configuration91.svcinfo" />
     <None Include="Connected Services\wsFormaPago\configuration.svcinfo" />
@@ -132,6 +125,14 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsSucursal\wsSucursal.disco" />
+    <None Include="Connected Services\wsSucursal\configuration91.svcinfo" />
+    <None Include="Connected Services\wsSucursal\configuration.svcinfo" />
+    <None Include="Connected Services\wsSucursal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="formSucursal.aspx" />
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
@@ -181,6 +182,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="formSucursal.aspx.cs">
+      <DependentUpon>formSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formSucursal.aspx.designer.cs">
+      <DependentUpon>formSucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmFactura.aspx.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
