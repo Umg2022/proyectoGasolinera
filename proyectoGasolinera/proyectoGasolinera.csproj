@@ -135,6 +135,7 @@
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
+    <Content Include="frmPrueba.aspx" />
     <Content Include="Resources\css\estilos.css" />
     <Content Include="Web.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="frmMenu.aspx.designer.cs">
       <DependentUpon>frmMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrueba.aspx.cs">
+      <DependentUpon>frmPrueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmPrueba.aspx.designer.cs">
+      <DependentUpon>frmPrueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
