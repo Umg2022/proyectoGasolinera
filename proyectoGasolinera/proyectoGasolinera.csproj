@@ -76,7 +76,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="WebForm1.aspx" />
     <None Include="Connected Services\wsBombaCombustible\wsBombacombustible.wsdl" />
     <None Include="Connected Services\WServicioWeb\wsUsuario.wsdl" />
     <None Include="Connected Services\wsFormaPago\wsFormaPago.wsdl" />
@@ -141,11 +140,11 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="formSucursal.aspx" />
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
     <Content Include="frmPrueba.aspx" />
+    <Content Include="frmUsuario.aspx" />
     <Content Include="otraPrueba.aspx" />
     <Content Include="Resources\css\estilos.css" />
     <Content Include="Web.config" />
@@ -197,13 +196,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="formSucursal.aspx.cs">
-      <DependentUpon>formSucursal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="formSucursal.aspx.designer.cs">
-      <DependentUpon>formSucursal.aspx</DependentUpon>
-    </Compile>
     <Compile Include="frmFactura.aspx.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,6 +224,13 @@
     <Compile Include="frmPrueba.aspx.designer.cs">
       <DependentUpon>frmPrueba.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuario.aspx.cs">
+      <DependentUpon>frmUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.aspx.designer.cs">
+      <DependentUpon>frmUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="otraPrueba.aspx.cs">
       <DependentUpon>otraPrueba.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,13 +239,6 @@
       <DependentUpon>otraPrueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\wsVenta\wsVenta.wsdl" />
