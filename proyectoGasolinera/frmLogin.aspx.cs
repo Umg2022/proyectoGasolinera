@@ -51,8 +51,8 @@ namespace proyectoGasolinera
             
           if (buscar(txtUsuario.Text, txtPassword.Text) ==1)
             {
-
-                Response.Redirect("frmFactura.aspx");
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('Bienvenido');</script>");
+                //Response.Redirect("frmFactura.aspx");
             }
           else
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('Usuario o Contraseña Invalidos');</script>");
