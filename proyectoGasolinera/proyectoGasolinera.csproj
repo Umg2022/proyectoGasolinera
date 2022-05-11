@@ -69,7 +69,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\WServicioWeb\wsUsuario.disco" />
+    <None Include="Connected Services\WServicioWeb\configuration91.svcinfo" />
+    <None Include="Connected Services\WServicioWeb\configuration.svcinfo" />
+    <None Include="Connected Services\WServicioWeb\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="WebForm1.aspx" />
     <None Include="Connected Services\wsBombaCombustible\wsBombacombustible.wsdl" />
+    <None Include="Connected Services\WServicioWeb\wsUsuario.wsdl" />
     <None Include="Connected Services\wsFormaPago\wsFormaPago.wsdl" />
     <None Include="Connected Services\wsSucursal\wsSucursal.wsdl" />
     <None Include="Connected Services\wsTipoCombustible\wsTipoCombustible.wsdl" />
@@ -144,6 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\wsBombaCombustible\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WServicioWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -226,6 +240,13 @@
       <DependentUpon>otraPrueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\wsVenta\wsVenta.wsdl" />
@@ -242,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\wsBombaCombustible\" />
+    <WCFMetadataStorage Include="Connected Services\WServicioWeb\" />
     <WCFMetadataStorage Include="Connected Services\wsFormaPago\" />
     <WCFMetadataStorage Include="Connected Services\wsSucursal\" />
     <WCFMetadataStorage Include="Connected Services\wsTipoCombustible\" />
