@@ -119,6 +119,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsTipoUsuario\wsTipoUsuario.wsdl" />
     <None Include="Connected Services\wsUsuario\wsUsuario.wsdl" />
     <None Include="Connected Services\wsVenta\wsVenta.disco" />
     <None Include="Connected Services\wsVenta\configuration91.svcinfo" />
@@ -141,10 +142,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsTipoUsuario\wsTipoUsuario.disco" />
+    <None Include="Connected Services\wsTipoUsuario\configuration91.svcinfo" />
+    <None Include="Connected Services\wsTipoUsuario\configuration.svcinfo" />
+    <None Include="Connected Services\wsTipoUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
     <Content Include="frmSucursal.aspx" />
+    <Content Include="frmTipoUsuario.aspx" />
     <Content Include="frmUsuario.aspx" />
     <Content Include="Resources\css\estilos.css" />
     <Content Include="Resources\css\style.css" />
@@ -187,6 +196,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\wsTipoUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\wsUsuario\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +239,13 @@
     <Compile Include="frmSucursal.aspx.designer.cs">
       <DependentUpon>frmSucursal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmTipoUsuario.aspx.cs">
+      <DependentUpon>frmTipoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTipoUsuario.aspx.designer.cs">
+      <DependentUpon>frmTipoUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.aspx.cs">
       <DependentUpon>frmUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +276,7 @@
     <WCFMetadataStorage Include="Connected Services\wsTipoCombustible\" />
     <WCFMetadataStorage Include="Connected Services\wsCliente\" />
     <WCFMetadataStorage Include="Connected Services\wsEmpleado\" />
+    <WCFMetadataStorage Include="Connected Services\wsTipoUsuario\" />
     <WCFMetadataStorage Include="Connected Services\wsUsuario\" />
     <WCFMetadataStorage Include="Connected Services\wsVenta\" />
   </ItemGroup>
