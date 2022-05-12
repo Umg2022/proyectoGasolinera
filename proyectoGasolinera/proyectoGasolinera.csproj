@@ -57,6 +57,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -143,10 +144,10 @@
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
-    <Content Include="frmPrueba.aspx" />
+    <Content Include="frmSucursal.aspx" />
     <Content Include="frmUsuario.aspx" />
-    <Content Include="otraPrueba.aspx" />
     <Content Include="Resources\css\estilos.css" />
+    <Content Include="Resources\css\style.css" />
     <Content Include="Web.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
@@ -217,12 +218,12 @@
     <Compile Include="frmMenu.aspx.designer.cs">
       <DependentUpon>frmMenu.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmPrueba.aspx.cs">
-      <DependentUpon>frmPrueba.aspx</DependentUpon>
+    <Compile Include="frmSucursal.aspx.cs">
+      <DependentUpon>frmSucursal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmPrueba.aspx.designer.cs">
-      <DependentUpon>frmPrueba.aspx</DependentUpon>
+    <Compile Include="frmSucursal.aspx.designer.cs">
+      <DependentUpon>frmSucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmUsuario.aspx.cs">
       <DependentUpon>frmUsuario.aspx</DependentUpon>
@@ -230,13 +231,6 @@
     </Compile>
     <Compile Include="frmUsuario.aspx.designer.cs">
       <DependentUpon>frmUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="otraPrueba.aspx.cs">
-      <DependentUpon>otraPrueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="otraPrueba.aspx.designer.cs">
-      <DependentUpon>otraPrueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

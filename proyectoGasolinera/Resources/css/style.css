@@ -1,0 +1,34 @@
+﻿html, body {
+    height: 100%;
+}
+
+.formulario {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    margin-top: 35px;
+    background: #EAECEE;
+    box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
+}
+
+h2 {
+    padding: 25px;
+}
+
+.form-campos {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+.busqueda {
+    width: 90%;
+    text-align: right;
+}
+
+.contenedor-form {
+    width: 90%;
+    margin: auto;
+}
