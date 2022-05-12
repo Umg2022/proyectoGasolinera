@@ -166,6 +166,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="frmAbastecimiento.aspx" />
+    <Content Include="frmCliente.aspx" />
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
@@ -245,6 +246,13 @@
     </Compile>
     <Compile Include="frmAbastecimiento.aspx.designer.cs">
       <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCliente.aspx.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCliente.aspx.designer.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmFactura.aspx.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
