@@ -149,6 +149,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="frmAbastecimiento.aspx" />
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
@@ -211,6 +212,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbastecimiento.aspx.cs">
+      <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbastecimiento.aspx.designer.cs">
+      <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmFactura.aspx.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
