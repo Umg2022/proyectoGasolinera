@@ -153,6 +153,7 @@
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
     <Content Include="frmSucursal.aspx" />
+    <Content Include="frmTipoCombustible.aspx" />
     <Content Include="frmTipoUsuario.aspx" />
     <Content Include="frmUsuario.aspx" />
     <Content Include="Resources\css\estilos.css" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="frmSucursal.aspx.designer.cs">
       <DependentUpon>frmSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoCombustible.aspx.cs">
+      <DependentUpon>frmTipoCombustible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmTipoCombustible.aspx.designer.cs">
+      <DependentUpon>frmTipoCombustible.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmTipoUsuario.aspx.cs">
       <DependentUpon>frmTipoUsuario.aspx</DependentUpon>
