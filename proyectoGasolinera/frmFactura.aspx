@@ -115,6 +115,8 @@
             <tr>
                 <td class="auto-style11" colspan="3">
                     <br />
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                     <span class="auto-style25"><strong>&quot;<span class="auto-style29">Gasolinera Formula 1&quot;</span><br class="auto-style29" />
                     <span class="auto-style29">Sucursal </span> </strong></span>
                     <br />

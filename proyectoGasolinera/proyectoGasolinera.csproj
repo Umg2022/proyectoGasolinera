@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\wsAbastecimiento\wsAbastecimiento.wsdl" />
     <None Include="Connected Services\WServicioWeb\wsUsuario.disco" />
     <None Include="Connected Services\WServicioWeb\configuration91.svcinfo" />
     <None Include="Connected Services\WServicioWeb\configuration.svcinfo" />
@@ -80,6 +81,7 @@
     <None Include="Connected Services\wsBombaCombustible\wsBombacombustible.wsdl" />
     <None Include="Connected Services\WServicioWeb\wsUsuario.wsdl" />
     <None Include="Connected Services\wsFormaPago\wsFormaPago.wsdl" />
+    <None Include="Connected Services\wsProveedor\wsProveedores.wsdl" />
     <None Include="Connected Services\wsSucursal\wsSucursal.wsdl" />
     <None Include="Connected Services\wsTipoCombustible\wsTipoCombustible.wsdl" />
     <None Include="Connected Services\wsCliente\wsCliente.wsdl" />
@@ -149,6 +151,20 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsAbastecimiento\wsAbastecimiento.disco" />
+    <None Include="Connected Services\wsAbastecimiento\configuration91.svcinfo" />
+    <None Include="Connected Services\wsAbastecimiento\configuration.svcinfo" />
+    <None Include="Connected Services\wsAbastecimiento\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsProveedor\wsProveedores.disco" />
+    <None Include="Connected Services\wsProveedor\configuration91.svcinfo" />
+    <None Include="Connected Services\wsProveedor\configuration.svcinfo" />
+    <None Include="Connected Services\wsProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="frmAbastecimiento.aspx" />
     <Content Include="frmFactura.aspx" />
     <Content Include="frmLogin.aspx" />
@@ -164,6 +180,11 @@
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\wsAbastecimiento\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\wsBombaCombustible\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +196,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\wsFormaPago\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsProveedor\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -216,6 +242,7 @@
     </Compile>
     <Compile Include="frmAbastecimiento.aspx.cs">
       <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmAbastecimiento.aspx.designer.cs">
       <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
@@ -285,9 +312,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\wsAbastecimiento\" />
     <WCFMetadataStorage Include="Connected Services\wsBombaCombustible\" />
     <WCFMetadataStorage Include="Connected Services\WServicioWeb\" />
     <WCFMetadataStorage Include="Connected Services\wsFormaPago\" />
+    <WCFMetadataStorage Include="Connected Services\wsProveedor\" />
     <WCFMetadataStorage Include="Connected Services\wsSucursal\" />
     <WCFMetadataStorage Include="Connected Services\wsTipoCombustible\" />
     <WCFMetadataStorage Include="Connected Services\wsCliente\" />

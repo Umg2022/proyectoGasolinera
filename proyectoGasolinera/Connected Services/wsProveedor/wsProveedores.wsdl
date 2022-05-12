@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listado_proveedores">
+        <s:complexType />
+      </s:element>
+      <s:element name="listado_proveedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listado_proveedoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_proveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProveedor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_proveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_proveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_proveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreProveedor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefonoProveedor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailProveedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_proveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_proveedorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_proveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProveedor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreProveedor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefonoProveedor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailProveedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_proveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_proveedorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_proveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idProveedor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_proveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_proveedorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listado_proveedoresSoapIn">
+    <wsdl:part name="parameters" element="tns:listado_proveedores" />
+  </wsdl:message>
+  <wsdl:message name="listado_proveedoresSoapOut">
+    <wsdl:part name="parameters" element="tns:listado_proveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_proveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_proveedor" />
+  </wsdl:message>
+  <wsdl:message name="buscar_proveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_proveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_proveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_proveedor" />
+  </wsdl:message>
+  <wsdl:message name="insertar_proveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_proveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_proveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_proveedor" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_proveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_proveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_proveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_proveedor" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_proveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_proveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsProveedoresSoap">
+    <wsdl:operation name="listado_proveedores">
+      <wsdl:input message="tns:listado_proveedoresSoapIn" />
+      <wsdl:output message="tns:listado_proveedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_proveedor">
+      <wsdl:input message="tns:buscar_proveedorSoapIn" />
+      <wsdl:output message="tns:buscar_proveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_proveedor">
+      <wsdl:input message="tns:insertar_proveedorSoapIn" />
+      <wsdl:output message="tns:insertar_proveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_proveedor">
+      <wsdl:input message="tns:actualizar_proveedorSoapIn" />
+      <wsdl:output message="tns:actualizar_proveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_proveedor">
+      <wsdl:input message="tns:eliminar_proveedorSoapIn" />
+      <wsdl:output message="tns:eliminar_proveedorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsProveedoresSoap" type="tns:wsProveedoresSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_proveedores">
+      <soap:operation soapAction="http://tempuri.org/listado_proveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_proveedor">
+      <soap:operation soapAction="http://tempuri.org/buscar_proveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_proveedor">
+      <soap:operation soapAction="http://tempuri.org/insertar_proveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_proveedor">
+      <soap:operation soapAction="http://tempuri.org/actualizar_proveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_proveedor">
+      <soap:operation soapAction="http://tempuri.org/eliminar_proveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsProveedoresSoap12" type="tns:wsProveedoresSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_proveedores">
+      <soap12:operation soapAction="http://tempuri.org/listado_proveedores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_proveedor">
+      <soap12:operation soapAction="http://tempuri.org/buscar_proveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_proveedor">
+      <soap12:operation soapAction="http://tempuri.org/insertar_proveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_proveedor">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_proveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_proveedor">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_proveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsProveedores">
+    <wsdl:port name="wsProveedoresSoap" binding="tns:wsProveedoresSoap">
+      <soap:address location="http://localhost/pruebas/pruebas/wsProveedores.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsProveedoresSoap12" binding="tns:wsProveedoresSoap12">
+      <soap12:address location="http://localhost/pruebas/pruebas/wsProveedores.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
