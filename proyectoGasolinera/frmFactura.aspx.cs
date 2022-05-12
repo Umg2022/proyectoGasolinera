@@ -48,7 +48,7 @@ namespace proyectoGasolinera
                 ddSucursal.DataValueField = "idSucursal"; // ocultar el valor idempleado
                 ddSucursal.DataTextField = "nombreSucursal"; //mostrar nombre de mi empleado
                 ddSucursal.DataBind();
-
+              
 
                 wsFormaPago.wsFormaPagoSoapClient forma = new wsFormaPago.wsFormaPagoSoapClient();
                 DataSet dsForma = new DataSet();

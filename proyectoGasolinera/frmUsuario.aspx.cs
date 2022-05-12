@@ -55,6 +55,7 @@ namespace proyectoGasolinera
             txtUsuario.Text = GridView1.SelectedRow.Cells[3].Text.ToString();
             txtNombre.Text = GridView1.SelectedRow.Cells[4].Text.ToString();
             txtPassword.Text = GridView1.SelectedRow.Cells[5].Text.ToString();
+          
         }
     }
     }

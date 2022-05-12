@@ -54,6 +54,8 @@
         &nbsp;
             <asp:Button ID="Button2" runat="server" CssClass="auto-style7" Height="29px" OnClick="Button2_Click" Text="Actualizar" Width="94px" />
             <asp:Button ID="Button3" runat="server" CssClass="auto-style8" Height="31px" OnClick="Button3_Click" Text="Eliminar" Width="114px" />
+            <asp:DropDownList ID="ddList" runat="server" AutoPostBack="True">
+            </asp:DropDownList>
         </p>
         <p>
             Codigo Usuario <asp:TextBox ID="txtCodigoUsuario" runat="server" CssClass="auto-style5" Width="132px"></asp:TextBox>
