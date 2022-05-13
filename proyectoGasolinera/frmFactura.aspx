@@ -135,7 +135,7 @@
             <tr>
                 <td class="auto-style18">Empleado</td>
                 <td class="auto-style19">
-                    <asp:DropDownList ID="ddEmpleado" runat="server" Height="16px" Width="338px">
+                    <asp:DropDownList ID="ddEmpleado" runat="server" Height="16px" Width="338px" OnSelectedIndexChanged="ddEmpleado_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style3" rowspan="2">

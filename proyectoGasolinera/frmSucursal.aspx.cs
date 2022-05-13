@@ -20,6 +20,11 @@ namespace proyectoGasolinera
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
+
+            lblID.Visible = false;
+            txtID.Visible = false;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         protected void btnGuardar_Click1(object sender, EventArgs e)
@@ -53,6 +58,9 @@ namespace proyectoGasolinera
             txtDireccion.Text = GridView1.SelectedRow.Cells[3].Text.ToString();
             txtTelefono.Text = GridView1.SelectedRow.Cells[4].Text.ToString();
 
+            lblID.Visible = true;
+            txtID.Visible = true;
+            btnGuardar.Enabled = false;
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
         }
@@ -88,40 +96,6 @@ namespace proyectoGasolinera
 
         protected void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            buscar(int.Parse(txtBuscar.Text));
-        }
-
-        protected void buscar(int sucursal)
-        {
-            DataGridViewRow fila = new DataGridViewRow();
-            string comprobarsucursal = " ";
-            string nombre = " ";
-
-            try
-            {
-                wsSucursal.wsSucursalSoapClient tipo = new wsSucursal.wsSucursalSoapClient();
-                DataSet dsTipo = new DataSet();
-                dsTipo = tipo.buscar_sucursal(sucursal);
-                if (dsTipo.Tables[0].Rows.Count > 0)
-
-                {
-                    comprobarsucursal = dsTipo.Tables[0].Rows[0]["idSucursal"].ToString();
-
-                    if (txtBuscar.Text == comprobarsucursal)
-                    {
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
 
         }
     }

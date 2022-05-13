@@ -2,6 +2,11 @@
     height: 100%;
 }
 
+#GridView1{
+    width: 90%;
+    margin: 30px auto;
+}
+
 .formulario {
     width: 90%;
     height: 100%;
@@ -11,6 +16,10 @@
     box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 35px -8px rgba(0,0,0,0.75);
+}
+
+.table{
+    width: 90%;
 }
 
 h2 {

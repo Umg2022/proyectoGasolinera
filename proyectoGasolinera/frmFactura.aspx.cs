@@ -271,6 +271,13 @@ namespace proyectoGasolinera
 
 
         }
+<<<<<<< HEAD
+
+        protected void ddEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+=======
         protected void buscarCliente(int idCliente)
         {
             try
@@ -351,6 +358,7 @@ namespace proyectoGasolinera
         }
 
 
+>>>>>>> f3847f7792c3c8124314cadbde12039048d26cce
     }
 }
            
