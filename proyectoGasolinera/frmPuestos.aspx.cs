@@ -27,7 +27,11 @@ namespace proyectoGasolinera
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             wsPuesto.wsPuestoSoapClient ws = new wsPuesto.wsPuestoSoapClient();
+<<<<<<< HEAD
             ws.Insertar_Puesto(txtNombre.Text, txtCaracteristicas.Text, double.Parse(txtSueldo.Text));
+=======
+            ws.Insertar_Puesto(txtNombre.Text, txtCaracteristicas.Text, Int32.Parse(txtSueldo.Text));
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
             DataSet ds = ws.Listado_Puestos();
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
@@ -38,7 +42,11 @@ namespace proyectoGasolinera
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             wsPuesto.wsPuestoSoapClient ws = new wsPuesto.wsPuestoSoapClient();
+<<<<<<< HEAD
             ws.actualizar_puesto(int.Parse(txtID.Text), txtNombre.Text, txtCaracteristicas.Text, double.Parse(txtSueldo.Text));
+=======
+            ws.actualizar_puesto(int.Parse(txtID.Text), txtNombre.Text, txtCaracteristicas.Text, Int32.Parse(txtSueldo.Text));
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
 
             DataSet ds = ws.Listado_Puestos();
             GridView1.DataSource = ds.Tables[0];

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="af37aaf7-e9bf-4dc9-96c1-935d0b49a673" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+=======
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1a106a60-e24f-49ac-b627-a3068c2198f3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +26,13 @@
     <MetadataSource Address="http://localhost/pruebas/pruebas/wsPuesto.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+<<<<<<< HEAD
     <MetadataFile FileName="wsPuesto.wsdl" MetadataType="Wsdl" ID="74cca636-8872-452a-afbe-d5ddd3374244" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsPuesto.asmx?wsdl" />
     <MetadataFile FileName="wsPuesto.disco" MetadataType="Disco" ID="b7a839da-ea5b-4cae-b5eb-49fdb2164245" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsPuesto.asmx?disco" />
+=======
+    <MetadataFile FileName="wsPuesto.wsdl" MetadataType="Wsdl" ID="70ad3ac1-a657-486f-aae3-5f56c2efa252" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsPuesto.asmx?wsdl" />
+    <MetadataFile FileName="wsPuesto.disco" MetadataType="Disco" ID="03022259-cf22-4c7d-9dcd-4c1f1861e554" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsPuesto.asmx?disco" />
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -32,6 +32,7 @@ namespace proyectoGasolinera.wsPuesto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insertar_Puesto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+<<<<<<< HEAD
         int Insertar_Puesto(string nombrePuesto, string caracteristicasPuesto, double sueldoPuesto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insertar_Puesto", ReplyAction="*")]
@@ -43,6 +44,19 @@ namespace proyectoGasolinera.wsPuesto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizar_puesto", ReplyAction="*")]
         System.Threading.Tasks.Task<int> actualizar_puestoAsync(int idPuesto, string nombrePuesto, string caracteristicasPuesto, double sueldoPuesto);
+=======
+        int Insertar_Puesto(string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Insertar_Puesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> Insertar_PuestoAsync(string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizar_puesto", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int actualizar_puesto(int idPuesto, string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/actualizar_puesto", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> actualizar_puestoAsync(int idPuesto, string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto);
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/eliminar_sucursal", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -95,6 +109,7 @@ namespace proyectoGasolinera.wsPuesto {
             return base.Channel.Buscar_PuestoAsync(idPuesto);
         }
         
+<<<<<<< HEAD
         public int Insertar_Puesto(string nombrePuesto, string caracteristicasPuesto, double sueldoPuesto) {
             return base.Channel.Insertar_Puesto(nombrePuesto, caracteristicasPuesto, sueldoPuesto);
         }
@@ -108,6 +123,21 @@ namespace proyectoGasolinera.wsPuesto {
         }
         
         public System.Threading.Tasks.Task<int> actualizar_puestoAsync(int idPuesto, string nombrePuesto, string caracteristicasPuesto, double sueldoPuesto) {
+=======
+        public int Insertar_Puesto(string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto) {
+            return base.Channel.Insertar_Puesto(nombrePuesto, caracteristicasPuesto, sueldoPuesto);
+        }
+        
+        public System.Threading.Tasks.Task<int> Insertar_PuestoAsync(string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto) {
+            return base.Channel.Insertar_PuestoAsync(nombrePuesto, caracteristicasPuesto, sueldoPuesto);
+        }
+        
+        public int actualizar_puesto(int idPuesto, string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto) {
+            return base.Channel.actualizar_puesto(idPuesto, nombrePuesto, caracteristicasPuesto, sueldoPuesto);
+        }
+        
+        public System.Threading.Tasks.Task<int> actualizar_puestoAsync(int idPuesto, string nombrePuesto, string caracteristicasPuesto, int sueldoPuesto) {
+>>>>>>> f3a82f8f0fe54ec964e1270a26f0eda58a9961a8
             return base.Channel.actualizar_puestoAsync(idPuesto, nombrePuesto, caracteristicasPuesto, sueldoPuesto);
         }
         
