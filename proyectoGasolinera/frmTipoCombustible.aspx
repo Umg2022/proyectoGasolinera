@@ -10,33 +10,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="contenedor">
-                <form id="form1" runat="server" class="formulario text-center">
-                    <h2>Tipo de Combustible</h2>
-                    <p>
-                            <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
-                            <asp:TextBox ID="txtID" runat="server" Width="35px"></asp:TextBox>
-                    </p>
-                    <div class="form-campos">
-                            <asp:Label class="campos-label" ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="ingrese nombre"></asp:TextBox>
-                            <asp:Label class="campos-label" ID="lblPrecioAuto" runat="server" Text="Precio autoservicio"></asp:Label>
-                            <asp:TextBox ID="txtPrecioAuto" runat="server" class="form-control" placeholder="ingrese precio"></asp:TextBox>
-                            <asp:Label class="campos-label" ID="lblPrecioCompleto" runat="server" Text="Precio servicio completo"></asp:Label>
-                            <asp:TextBox ID="txtPrecioCompleto" runat="server" class="form-control" placeholder="ingrese precio"></asp:TextBox>
+      <form id="form1" runat="server" class="formulario text-center">
+            <h2>Tipo de Combustible</h2>
+               <div class="form-campos">
+                  <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
+                  <asp:TextBox ID="txtID" runat="server" Width="35px" Enabled="False"></asp:TextBox>
+                   <br />
+                   <asp:Label class="campos-label" ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                  <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="ingrese nombre"></asp:TextBox>
+                   <br />
+                   <asp:Label class="campos-label" ID="lblPrecioAuto" runat="server" Text="Precio autoservicio"></asp:Label>
+                  <asp:TextBox ID="txtPrecioAuto" runat="server" class="form-control" placeholder="ingrese precio"></asp:TextBox>
+                   <br />
+                   <asp:Label class="campos-label" ID="lblPrecioCompleto" runat="server" Text="Precio servicio completo"></asp:Label>
+                  <asp:TextBox ID="txtPrecioCompleto" runat="server" class="form-control" placeholder="ingrese precio"></asp:TextBox>
                     </div>
                         <br />
                         <asp:Button ID="btnGuardar" runat="server" OnClick="btnGuardar_Click1" Text="Guardar" class="btn btn-success"/>
-                        <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" class="btn" Enabled="False"/>
+                        <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" class="btn btn-primary" Enabled="False"/>
                         <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" class="btn btn-danger" Enabled="False"/>
-                    <br />
-                    <br />
-                    <div class="busqueda">
-                    <asp:Label ID="lblBuscar" runat="server" Text="Buscar"></asp:Label>
-                    <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
-                    </div>
-                    <br />
-                    <div class="contenedor-form">
                         <asp:GridView ID="GridView1" runat="server" class="table" 
                             OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="White" />
@@ -51,8 +43,6 @@
                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
-                    </div>
-                 </form>
-    </div>         
+                 </form>       
 </body>
 </html>

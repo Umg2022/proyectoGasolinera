@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\wsAbastecimiento\wsAbastecimiento.wsdl" />
+    <None Include="Connected Services\wsCombustibleDisponible\wsCombustibleDisponible.wsdl" />
     <None Include="Connected Services\WServicioWeb\wsUsuario.disco" />
     <None Include="Connected Services\WServicioWeb\configuration91.svcinfo" />
     <None Include="Connected Services\WServicioWeb\configuration.svcinfo" />
@@ -82,6 +83,7 @@
     <None Include="Connected Services\WServicioWeb\wsUsuario.wsdl" />
     <None Include="Connected Services\wsFormaPago\wsFormaPago.wsdl" />
     <None Include="Connected Services\wsProveedor\wsProveedores.wsdl" />
+    <None Include="Connected Services\wsPuesto\wsPuesto.wsdl" />
     <None Include="Connected Services\wsSucursal\wsSucursal.wsdl" />
     <None Include="Connected Services\wsTipoCombustible\wsTipoCombustible.wsdl" />
     <None Include="Connected Services\wsCliente\wsCliente.wsdl" />
@@ -137,13 +139,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\wsSucursal\wsSucursal.disco" />
-    <None Include="Connected Services\wsSucursal\configuration91.svcinfo" />
-    <None Include="Connected Services\wsSucursal\configuration.svcinfo" />
-    <None Include="Connected Services\wsSucursal\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\wsTipoUsuario\wsTipoUsuario.disco" />
     <None Include="Connected Services\wsTipoUsuario\configuration91.svcinfo" />
     <None Include="Connected Services\wsTipoUsuario\configuration.svcinfo" />
@@ -165,11 +160,36 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsPuesto\wsPuesto.disco" />
+    <None Include="Connected Services\wsPuesto\configuration91.svcinfo" />
+    <None Include="Connected Services\wsPuesto\configuration.svcinfo" />
+    <None Include="Connected Services\wsPuesto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsSucursal\wsSucursal.disco" />
+    <None Include="Connected Services\wsSucursal\configuration91.svcinfo" />
+    <None Include="Connected Services\wsSucursal\configuration.svcinfo" />
+    <None Include="Connected Services\wsSucursal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsCombustibleDisponible\wsCombustibleDisponible.disco" />
+    <None Include="Connected Services\wsCombustibleDisponible\configuration91.svcinfo" />
+    <None Include="Connected Services\wsCombustibleDisponible\configuration.svcinfo" />
+    <None Include="Connected Services\wsCombustibleDisponible\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="frmAbastecimiento.aspx" />
     <Content Include="frmCliente.aspx" />
+    <Content Include="frmEmpleado.aspx" />
     <Content Include="frmFactura.aspx" />
+    <Content Include="frmFormaPago.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
+    <Content Include="frmProveedor.aspx" />
+    <Content Include="frmPuestos.aspx" />
     <Content Include="frmSucursal.aspx" />
     <Content Include="frmTipoCombustible.aspx" />
     <Content Include="frmTipoUsuario.aspx" />
@@ -190,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\wsCombustibleDisponible\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WServicioWeb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +226,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\wsProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsPuesto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -254,12 +284,26 @@
     <Compile Include="frmCliente.aspx.designer.cs">
       <DependentUpon>frmCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmEmpleado.aspx.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEmpleado.aspx.designer.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmFactura.aspx.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmFactura.aspx.designer.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormaPago.aspx.cs">
+      <DependentUpon>frmFormaPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmFormaPago.aspx.designer.cs">
+      <DependentUpon>frmFormaPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.aspx.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
@@ -274,6 +318,20 @@
     </Compile>
     <Compile Include="frmMenu.aspx.designer.cs">
       <DependentUpon>frmMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedor.aspx.cs">
+      <DependentUpon>frmProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmProveedor.aspx.designer.cs">
+      <DependentUpon>frmProveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPuestos.aspx.cs">
+      <DependentUpon>frmPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmPuestos.aspx.designer.cs">
+      <DependentUpon>frmPuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmSucursal.aspx.cs">
       <DependentUpon>frmSucursal.aspx</DependentUpon>
@@ -321,9 +379,11 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\wsAbastecimiento\" />
     <WCFMetadataStorage Include="Connected Services\wsBombaCombustible\" />
+    <WCFMetadataStorage Include="Connected Services\wsCombustibleDisponible\" />
     <WCFMetadataStorage Include="Connected Services\WServicioWeb\" />
     <WCFMetadataStorage Include="Connected Services\wsFormaPago\" />
     <WCFMetadataStorage Include="Connected Services\wsProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\wsPuesto\" />
     <WCFMetadataStorage Include="Connected Services\wsSucursal\" />
     <WCFMetadataStorage Include="Connected Services\wsTipoCombustible\" />
     <WCFMetadataStorage Include="Connected Services\wsCliente\" />

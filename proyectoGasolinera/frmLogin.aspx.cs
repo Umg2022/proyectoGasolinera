@@ -9,8 +9,7 @@ namespace proyectoGasolinera
 {
     public partial class frmLogin : System.Web.UI.Page
     {
-        string comprobarUser = "";
-        string comporbarPass = "";
+        
        
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +27,7 @@ namespace proyectoGasolinera
                password = dsTipo.Tables[0].Rows[0]["password"].ToString();
                 //if (txtUsuario.Text == comprobarUser && txtPassword.Text == comporbarPass)
 
-                if (password == txtPassword.Text && usuario == txtUsuario.Text)
+                if (password == txtPassword.Text   && usuario == txtUsuario.Text)
                 {
                     numero = 1;
                     
@@ -51,13 +50,16 @@ namespace proyectoGasolinera
             
           if (buscar(txtUsuario.Text, txtPassword.Text) ==1)
             {
-                this.Page.Response.Write("<script language='JavaScript'>window.alert('Bienvenido');</script>");
-                //Response.Redirect("frmFactura.aspx");
+                //this.Page.Response.Write("<script language='JavaScript'>window.alert('Bienvenido');</script>");
+                Response.Redirect("frmMenu.aspx");
             }
           else
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('Usuario o Contraseña Invalidos');</script>");
         }
 
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -20,6 +20,11 @@ namespace proyectoGasolinera
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
+
+            lblID.Visible = false;
+            txtID.Visible = false;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         protected void btnGuardar_Click1(object sender, EventArgs e)
@@ -62,6 +67,11 @@ namespace proyectoGasolinera
         {
             txtID.Text = GridView1.SelectedRow.Cells[1].Text.ToString();
             txtNombre.Text = GridView1.SelectedRow.Cells[2].Text.ToString();
+            lblID.Visible = true;
+            txtID.Visible = true;
+            btnGuardar.Enabled = false;
+            btnActualizar.Enabled = true;
+            btnEliminar.Enabled = true;
         }
         public void limpiar()
         {

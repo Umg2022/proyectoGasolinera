@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Listado_Puestos">
+        <s:complexType />
+      </s:element>
+      <s:element name="Listado_PuestosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Listado_PuestosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buscar_Puesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPuesto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Buscar_PuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Buscar_PuestoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_Puesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombrePuesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caracteristicasPuesto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sueldoPuesto" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_PuestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insertar_PuestoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_puesto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPuesto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombrePuesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caracteristicasPuesto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sueldoPuesto" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_puestoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_puestoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_sucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPuesto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_sucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_sucursalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Listado_PuestosSoapIn">
+    <wsdl:part name="parameters" element="tns:Listado_Puestos" />
+  </wsdl:message>
+  <wsdl:message name="Listado_PuestosSoapOut">
+    <wsdl:part name="parameters" element="tns:Listado_PuestosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Buscar_PuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:Buscar_Puesto" />
+  </wsdl:message>
+  <wsdl:message name="Buscar_PuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:Buscar_PuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_PuestoSoapIn">
+    <wsdl:part name="parameters" element="tns:Insertar_Puesto" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_PuestoSoapOut">
+    <wsdl:part name="parameters" element="tns:Insertar_PuestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_puestoSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_puesto" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_puestoSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_puestoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_sucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_sucursal" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_sucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_sucursalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsPuestoSoap">
+    <wsdl:operation name="Listado_Puestos">
+      <wsdl:input message="tns:Listado_PuestosSoapIn" />
+      <wsdl:output message="tns:Listado_PuestosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Puesto">
+      <wsdl:input message="tns:Buscar_PuestoSoapIn" />
+      <wsdl:output message="tns:Buscar_PuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Puesto">
+      <wsdl:input message="tns:Insertar_PuestoSoapIn" />
+      <wsdl:output message="tns:Insertar_PuestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_puesto">
+      <wsdl:input message="tns:actualizar_puestoSoapIn" />
+      <wsdl:output message="tns:actualizar_puestoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <wsdl:input message="tns:eliminar_sucursalSoapIn" />
+      <wsdl:output message="tns:eliminar_sucursalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsPuestoSoap" type="tns:wsPuestoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listado_Puestos">
+      <soap:operation soapAction="http://tempuri.org/Listado_Puestos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Puesto">
+      <soap:operation soapAction="http://tempuri.org/Buscar_Puesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Puesto">
+      <soap:operation soapAction="http://tempuri.org/Insertar_Puesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_puesto">
+      <soap:operation soapAction="http://tempuri.org/actualizar_puesto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <soap:operation soapAction="http://tempuri.org/eliminar_sucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsPuestoSoap12" type="tns:wsPuestoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listado_Puestos">
+      <soap12:operation soapAction="http://tempuri.org/Listado_Puestos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Puesto">
+      <soap12:operation soapAction="http://tempuri.org/Buscar_Puesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Puesto">
+      <soap12:operation soapAction="http://tempuri.org/Insertar_Puesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_puesto">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_puesto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_sucursal">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_sucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsPuesto">
+    <wsdl:port name="wsPuestoSoap" binding="tns:wsPuestoSoap">
+      <soap:address location="http://localhost/pruebas/pruebas/wsPuesto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsPuestoSoap12" binding="tns:wsPuestoSoap12">
+      <soap12:address location="http://localhost/pruebas/pruebas/wsPuesto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
