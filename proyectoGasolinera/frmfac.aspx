@@ -135,7 +135,7 @@
             <tr>
                 <td class="auto-style18">Empleado</td>
                 <td class="auto-style19">
-                    <asp:DropDownList ID="ddEmpleado" runat="server" Height="16px" Width="338px" OnSelectedIndexChanged="ddEmpleado_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddEmpleado" runat="server" Height="16px" Width="338px">
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style3" rowspan="2">
@@ -174,11 +174,11 @@
                     <asp:TextBox ID="txtCantidad" runat="server" Width="197px"></asp:TextBox>
                 </td>
                 <td class="auto-style27">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Bomba De Combustible&nbsp;
                     <asp:DropDownList ID="ddBomba" runat="server" AutoPostBack="True" CssClass="auto-style8" Height="16px" Width="158px" OnSelectedIndexChanged="ddBomba_SelectedIndexChanged">
                     </asp:DropDownList>
-&nbsp;&nbsp;
+&nbsp;Combustible Disponible&nbsp;&nbsp;<asp:TextBox ID="txtDisponible" runat="server" CssClass="auto-style8" Enabled="False" Width="167px"></asp:TextBox>
+                    &nbsp;
                 </td>
             </tr>
             <tr>
@@ -216,6 +216,8 @@
             Total a Pagar<asp:TextBox ID="txtTotal" runat="server" CssClass="auto-style17" Height="16px" Width="182px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total de Galones<asp:TextBox ID="txtGalones" runat="server" CssClass="auto-style33" Enabled="False" Width="171px"></asp:TextBox>
         </p>
+        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
     </form>
 </body>
 </html>

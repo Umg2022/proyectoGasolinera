@@ -5,18 +5,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+using System.IO;
 
 namespace proyectoGasolinera
 {
     public partial class frmFactura : System.Web.UI.Page
     {
+        string serie = "Factura ";
+        Int32 contador = 0,cont;
+        double galones;
+        double disponibles;
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+         
+
             if (!IsPostBack) //se va ejecutar una sola vez, cuando el usuario presione un click 
             {
+
                
+                txtFactura.Text = serie;
                 wsEmpleado.wsEmpleadoSoapClient empleado = new wsEmpleado.wsEmpleadoSoapClient();
                 DataSet dsEmpleado = new DataSet();
                 dsEmpleado = empleado.listado_empleados();
@@ -31,8 +40,9 @@ namespace proyectoGasolinera
                 ddCliente.DataValueField = "idCliente"; // ocultar el valor idempleado
                 ddCliente.DataTextField = "nombreCliente"; //mostrar nombre de mi empleado
                 ddCliente.DataBind();
+                buscarCliente(Convert.ToInt32(ddCliente.SelectedValue));
 
-                wsTipoCombustible.wsTipoCombustibleSoapClient tipo  = new wsTipoCombustible.wsTipoCombustibleSoapClient();
+                wsTipoCombustible.wsTipoCombustibleSoapClient tipo = new wsTipoCombustible.wsTipoCombustibleSoapClient();
                 DataSet dsTipo = new DataSet();
                 dsTipo = tipo.Listado_Tipo_De_Combustible();
                 ddTipoCombustible.DataSource = dsTipo; // guardar en el dowdown list todo lo que tenga mi tabla empleado
@@ -48,7 +58,7 @@ namespace proyectoGasolinera
                 ddSucursal.DataValueField = "idSucursal"; // ocultar el valor idempleado
                 ddSucursal.DataTextField = "nombreSucursal"; //mostrar nombre de mi empleado
                 ddSucursal.DataBind();
-              
+
 
                 wsFormaPago.wsFormaPagoSoapClient forma = new wsFormaPago.wsFormaPagoSoapClient();
                 DataSet dsForma = new DataSet();
@@ -65,21 +75,13 @@ namespace proyectoGasolinera
                 ddBomba.DataTextField = "idBombaCombustible"; //mostrar nombre de mi empleado
                 ddBomba.DataBind();
 
-                /*
-                wsVenta.wsVentaSoapClient venta = new wsVenta.wsVentaSoapClient();
-                DataSet dsVenta = new DataSet();
-                dsVenta = venta.listado_Venta();
-                txtFactura.DataSource = dsSucursal; // guardar en el dowdown list todo lo que tenga mi tabla empleado
-                txtFactura.DataValueField = "idSucursal"; // ocultar el valor idempleado
-                txtFactura.DataTextField = "nombreSucursal"; //mostrar nombre de mi empleado
-                txtFactura.DataBind();*/
 
 
                 DataColumn id = dt.Columns.Add("idTipoCombustible", typeof(int));
                 DataColumn combustible = dt.Columns.Add("Tipo Combustible", typeof(string));
-                DataColumn cantidad = dt.Columns.Add("Cantidad", typeof(int));
+                DataColumn cantidad = dt.Columns.Add("Cantidad en galones", typeof(double));
                 DataColumn precio = dt.Columns.Add("Precio", typeof(double));
-               DataColumn subTotal = dt.Columns.Add("SubTotal", typeof(double));
+                DataColumn subTotal = dt.Columns.Add("SubTotal", typeof(double));
                 DataColumn bombac = dt.Columns.Add("No Bomba", typeof(int));
                 DataColumn tpago = dt.Columns.Add("Forma De Pago", typeof(string));
                 DataColumn tprueba = dt.Columns.Add("prueba", typeof(string));
@@ -92,7 +94,7 @@ namespace proyectoGasolinera
             }
         }
 
-        protected void buscarPrecioAuto (int idTipoCombustible)
+        protected void buscarPrecioAuto(int idTipoCombustible)
         {
             try
             {
@@ -102,14 +104,14 @@ namespace proyectoGasolinera
                 if (dsTipo.Tables[0].Rows.Count > 0)
                 {
                     txtPrecio.Text = dsTipo.Tables[0].Rows[0]["PrecioCombustibleAutoservicio"].ToString();
-                   
+
                 }
             }
             catch (Exception ex)
             {
 
             }
-           
+
         }
         protected void buscarPrecioCompleto(int idTipoCombustible)
         {
@@ -134,16 +136,17 @@ namespace proyectoGasolinera
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void ddTipoCombustible_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (ddTipoServicio.SelectedValue =="Auto Servicio")
+
+            if (ddTipoServicio.SelectedValue == "Auto Servicio")
             {
                 buscarPrecioAuto(Convert.ToInt32(ddTipoCombustible.SelectedValue));
-            } else
+            }
+            else
 
                 buscarPrecioCompleto(Convert.ToInt32(ddTipoCombustible.SelectedValue));
 
@@ -163,20 +166,20 @@ namespace proyectoGasolinera
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-          
+
+
         }
 
         public void totalFactura()
         {
-            double total =0;
+            double total = 0;
             foreach (GridViewRow row in gvArticulo.Rows)
             {
                 total += Convert.ToDouble(row.Cells[4].Text);
 
             }
             txtTotal.Text = total.ToString();
-           
+
         }
 
         protected void Insertar_Click(object sender, EventArgs e)
@@ -184,53 +187,60 @@ namespace proyectoGasolinera
             dt = Session["tablaSesion"] as DataTable;
             DataRow fila = dt.NewRow();
             double subtotal = Convert.ToDouble(txtCantidad.Text);
-
-            dt.Rows.Add(ddTipoCombustible.SelectedValue, ddTipoCombustible.SelectedItem.ToString(),txtCantidad.Text,txtPrecio.Text,subtotal,  ddBomba.SelectedItem.ToString(), ddForma.SelectedItem.ToString());
+          double cantidad = Convert.ToInt32(txtCantidad.Text) / Convert.ToDouble(txtPrecio.Text);
+            dt.Rows.Add(ddTipoCombustible.SelectedValue, ddTipoCombustible.SelectedItem.ToString(), Math.Round(cantidad, 2), txtPrecio.Text, subtotal, ddBomba.SelectedItem.ToString(), ddForma.SelectedItem.ToString());
             //
             gvArticulo.DataSource = dt;
             gvArticulo.DataBind();
-
+            
             Session["tablaSesion"] = dt;
             totalFactura();
+            totalGalones();
+           
         }
 
         protected void gvArticulo_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Select")
             {
-                int index    = Convert.ToInt32(e.CommandArgument); // permitir capturar la fila q estamos seleccionando
-                dt = (DataTable) Session["tablaSesion"];
+                int index = Convert.ToInt32(e.CommandArgument); // permitir capturar la fila q estamos seleccionando
+                dt = (DataTable)Session["tablaSesion"];
                 dt.Rows.RemoveAt(index);
-                gvArticulo.DataSource= dt;
+                gvArticulo.DataSource = dt;
                 gvArticulo.DataBind();
 
                 Session["tablaSesion"] = dt;
                 totalFactura();
-
+                totalGalones();
 
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            wsVenta.wsVentaSoapClient  venta = new wsVenta.wsVentaSoapClient();
-            int respEncabezado =0;
+           
+            wsVenta.wsVentaSoapClient venta = new wsVenta.wsVentaSoapClient();
+            wsCombustibleDisponible.wsCombustibleDisponibleSoapClient disponible = new wsCombustibleDisponible.wsCombustibleDisponibleSoapClient();
+            int respEncabezado = 0;
             int cont = 0;
             string total = (txtTotal.Text);
-            respEncabezado = venta.insertar_Venta(txtFactura.Text, Convert.ToInt32(ddCliente.SelectedValue), Convert.ToInt32(ddEmpleado.SelectedValue), Convert.ToDouble(txtTotal.Text)) ;
+            double tgalones = Convert.ToDouble(txtGalones.Text);
+          
+            double tot = tgalones;    
+            respEncabezado = venta.insertar_Venta(txtFactura.Text, Convert.ToInt32(ddCliente.SelectedValue), Convert.ToInt32(ddEmpleado.SelectedValue), Convert.ToDouble(txtTotal.Text));
             if (respEncabezado == 1)
             {
-                foreach(GridViewRow row in gvArticulo.Rows)
+                foreach (GridViewRow row in gvArticulo.Rows)
                 {
-                    venta.insertar_detalleVenta(txtFactura.Text,Convert.ToInt32(gvArticulo.DataKeys[cont].Value), Convert.ToInt32(ddForma.SelectedValue), Convert.ToInt32(ddBomba.SelectedValue),Convert.ToInt32(row.Cells[2].Text));
+                    venta.insertar_detalleVenta(txtFactura.Text, Convert.ToInt32(gvArticulo.DataKeys[cont].Value), Convert.ToInt32(ddForma.SelectedValue), Convert.ToInt32(ddBomba.SelectedValue), Convert.ToDouble(row.Cells[2].Text));
                     cont++;
                 }
 
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('VENTA REALIZADA');</script>");
-                
-                txtCantidad.Text ="";
+
+                txtCantidad.Text = "";
                 txtTotal.Text = "";
-                txtFactura.Text = "";
+                txtFactura.Text = serie;
                 DataTable ds = new DataTable();
                 ds = null;
                 gvArticulo.DataSource = ds;
@@ -245,8 +255,8 @@ namespace proyectoGasolinera
             }
             else
             {
-                
-                
+
+
                 this.Page.Response.Write("<script language='JavaScript'>window.alert('Venta No Realizada');</script>");
             }
         }
@@ -259,14 +269,97 @@ namespace proyectoGasolinera
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            TextBox1.Text = ddEmpleado.SelectedValue;
+
         }
+<<<<<<< HEAD
 
         protected void ddEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+=======
+        protected void buscarCliente(int idCliente)
+        {
+            try
+            {
+                wsCliente.wsClienteSoapClient cliente = new wsCliente.wsClienteSoapClient();
+                DataSet dsCliente = new DataSet();
+                dsCliente = cliente.buscar_cliente(idCliente);
+                if (dsCliente.Tables[0].Rows.Count > 0)
+                //   if (txtbuscar.text == dsTipo.Tables[0].Rows.Count )
+                {
+                    txtNit.Text = dsCliente.Tables[0].Rows[0]["nitCliente"].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        protected void ddCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buscarCliente(Convert.ToInt32(ddCliente.SelectedValue));
+        }
+
+        protected void ddBomba_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buscarDisponible(Convert.ToInt32(ddBomba.SelectedValue));
+           
+        }
+
+        protected void buscarDisponible(int idCombustibleDisponible)
+        {
+            try
+            {
+                wsCombustibleDisponible.wsCombustibleDisponibleSoapClient tipo = new wsCombustibleDisponible.wsCombustibleDisponibleSoapClient();
+                DataSet dsTipo = new DataSet();
+                dsTipo = tipo.buscar_Combustible(idCombustibleDisponible);
+                if (dsTipo.Tables[0].Rows.Count > 0)
+                //   if (txtbuscar.text == dsTipo.Tables[0].Rows.Count )
+                {
+               
+                 
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            //
+            double total = disponibles - galones;
+            
+
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        public void totalGalones()
+        {
+            double total = 0;
+            foreach (GridViewRow row in gvArticulo.Rows)
+            {
+                total += Convert.ToDouble(row.Cells[2].Text);
+
+            }
+            txtGalones.Text = total.ToString();
+            galones = total;
+        }
+
+
+>>>>>>> f3847f7792c3c8124314cadbde12039048d26cce
     }
-    }
+}
            
     

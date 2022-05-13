@@ -27,44 +27,52 @@
             background-color: #fff;
         }
        
+        .auto-style2 {
+            margin-left: 42px;
+        }
+       
         </style>
 </head>
 <body>
-    <div class="container well contenedor"  >
-        
+    <div class="container well contenedor"  style="width: 40%">
+        <img src="logo.JPG" alt="logo" width="200" class="auto-style2"/>
         <div class ="row">
-            <div class="col-xs-12">
-                <h2>
-                    Iniciar Sesión</h2>
+            <div class="col-xs-20">
+                
+                <h6>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INICIAR SECIÓN</h6>
             </div>
 
         </div>
         <form runat="server" class="form-horizontal">
 
             <div class="form-group">
-                <asp:Label ID="lblPasswor" runat="server" Text="Password" CssClass="control-label col-sm-2"></asp:Label>
                 <div class ="col-sm-10">
-                     <asp:TextBox ID="txtUsuario" runat="server" CssClass="auto-style1" Width="311px"></asp:TextBox>
+                     Usuario<asp:TextBox ID="txtUsuario" runat="server" CssClass="auto-style1" Width="256px"></asp:TextBox>
 
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label ID="lblUsuario" runat="server" Text="Usuario" CssClass="control-label col-sm-2"></asp:Label>
                 <div class ="col-sm-10">
-                     <asp:TextBox ID="txtPassword" runat="server" CssClass="auto-style1" Width="311px"></asp:TextBox>
-
-                     <br />
+                     Contraseña<asp:TextBox ID="txtPassword" type="password" runat="server" CssClass="auto-style1" Width="259px"></asp:TextBox>
+            &nbsp;<br />
 
                 </div>
             </div>
-            <div class ="form-group">
-               </div>
-                <asp:Button ID="Button1" runat="server"  Height="44px" OnClick="Button1_Click" Text="Ingresar"  CssClass="form-control btn btn-primary"  style="margin-left: 101px" Width="148px"/>
+                <asp:Button ID="Button1" runat="server"  Height="44px" OnClick="Button1_Click" Text="Ingresar"  CssClass="form-control btn btn-primary"  style="margin-left: 75px" Width="148px"/>
             </div>
             <div>
         </div>
         
     </form>
+        
+  
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
         
   
 </body>

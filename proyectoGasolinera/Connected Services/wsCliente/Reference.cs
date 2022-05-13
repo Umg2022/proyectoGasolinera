@@ -43,6 +43,13 @@ namespace proyectoGasolinera.wsCliente {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/eliminar_cliente", ReplyAction="*")]
         System.Threading.Tasks.Task<int> eliminar_clienteAsync(int idCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/buscar_cliente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet buscar_cliente(int idCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/buscar_cliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> buscar_clienteAsync(int idCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -102,6 +109,14 @@ namespace proyectoGasolinera.wsCliente {
         
         public System.Threading.Tasks.Task<int> eliminar_clienteAsync(int idCliente) {
             return base.Channel.eliminar_clienteAsync(idCliente);
+        }
+        
+        public System.Data.DataSet buscar_cliente(int idCliente) {
+            return base.Channel.buscar_cliente(idCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> buscar_clienteAsync(int idCliente) {
+            return base.Channel.buscar_clienteAsync(idCliente);
         }
     }
 }

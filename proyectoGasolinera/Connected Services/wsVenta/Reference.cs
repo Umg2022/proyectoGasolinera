@@ -50,6 +50,13 @@ namespace proyectoGasolinera.wsVenta {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/eliminar_Venta", ReplyAction="*")]
         System.Threading.Tasks.Task<int> eliminar_VentaAsync(int idFactura);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/buscar_venta", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet buscar_venta(string idVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/buscar_venta", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> buscar_ventaAsync(string idVenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -117,6 +124,14 @@ namespace proyectoGasolinera.wsVenta {
         
         public System.Threading.Tasks.Task<int> eliminar_VentaAsync(int idFactura) {
             return base.Channel.eliminar_VentaAsync(idFactura);
+        }
+        
+        public System.Data.DataSet buscar_venta(string idVenta) {
+            return base.Channel.buscar_venta(idVenta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> buscar_ventaAsync(string idVenta) {
+            return base.Channel.buscar_ventaAsync(idVenta);
         }
     }
 }
