@@ -10,35 +10,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="contenedor">
-                <form id="form1" runat="server" class="formulario text-center">
-                    <h2>Sucursal</h2>
-                        <p>
-                            <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
-                            <asp:TextBox ID="txtID" runat="server" Width="35px" Enabled="False" OnTextChanged="txtID_TextChanged"></asp:TextBox>
-                        </p>
-                    <div class="form-campos">
-                            <asp:Label class="campos-label" ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="ingrese nombre"></asp:TextBox>
-                            <asp:Label class="campos-label text-left" ID="lblDireccion" runat="server" Text="Dirección"></asp:Label>
-                            <asp:TextBox ID="txtDireccion" runat="server" class="form-control" placeholder="ingrese dirección"></asp:TextBox>
-                            <asp:Label class="campos-label" ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
-                            <asp:TextBox ID="txtTelefono" runat="server" class="form-control" placeholder="ingrese teléfono"></asp:TextBox>
-                    </div>
-                        <br />
-                        <asp:TextBox ID="txtComprobar" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnGuardar" runat="server" OnClick="btnGuardar_Click1" Text="Guardar" class="btn btn-success"/>
-                        <asp:Button ID="btnActualizar" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" class="btn" Enabled="False"/>
-                        <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" class="btn btn-danger" Enabled="False"/>
-                    <br />
-                    <br />
-                    <div class="busqueda">
-                    <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged="txtBuscar_TextChanged"></asp:TextBox>
-                        <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Buscar" />
-                    </div>
-                    <br />
-                    <div class="contenedor-form">
-                        <asp:GridView ID="GridView1" runat="server" class="table" 
+       <form id="form1" runat="server" class="formulario text-center">
+           <h2>Creación, actualización y eliminación de sucursales</h2>
+           <div class="form-campos">
+                 <asp:Label ID="lblID" runat="server" Text="ID"></asp:Label>
+                 <asp:TextBox ID="txtID" runat="server" Width="35px" Enabled="False" OnTextChanged="txtID_TextChanged"></asp:TextBox>
+               <br />  
+               <asp:Label class="campos-label" ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                 <asp:TextBox ID="txtNombre" class="form-control" runat="server" placeholder="ingrese nombre"></asp:TextBox>
+               <br />  
+               <asp:Label class="campos-label text-left" ID="lblDireccion" runat="server" Text="Dirección"></asp:Label>
+                 <asp:TextBox ID="txtDireccion" class="form-control" runat="server" placeholder="ingrese dirección"></asp:TextBox>
+               <br />  
+               <asp:Label class="campos-label" ID="lblTelefono" runat="server" Text="Telefono"></asp:Label>
+                 <asp:TextBox ID="txtTelefono" runat="server" class="form-control" placeholder="ingrese teléfono"></asp:TextBox>
+           </div>
+           <br />
+                 <asp:Button ID="btnGuardar" class="btn btn-success" runat="server" OnClick="btnGuardar_Click1" Text="Guardar"/>
+                 <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" OnClick="btnActualizar_Click" Text="Actualizar" Enabled="False"/>
+                 <asp:Button ID="btnEliminar" class="btn btn-danger" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" Enabled="False"/>
+                 <asp:GridView ID="GridView1" runat="server" class="table" 
                             OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="White" />
                             <EditRowStyle BackColor="#2461BF" />
@@ -52,8 +43,6 @@
                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
-                    </div>
-                 </form>
-    </div>         
+                 </form>        
 </body>
 </html>

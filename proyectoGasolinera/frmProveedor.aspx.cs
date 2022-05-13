@@ -8,17 +8,17 @@ using System.Data;
 
 namespace proyectoGasolinera
 {
-    public partial class frmCliente : System.Web.UI.Page
+    public partial class frmProveedor : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            wsCliente.wsClienteSoapClient ws = new wsCliente.wsClienteSoapClient();
-            DataSet ds = ws.listado_cliente();
+            wsProveedor.wsProveedoresSoapClient ws = new wsProveedor.wsProveedoresSoapClient();
+            DataSet ds = ws.listado_proveedores();
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
 
-            lblID.Visible = false;
+            Label4.Visible = false;
             txtID.Visible = false;
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
@@ -26,10 +26,10 @@ namespace proyectoGasolinera
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            wsCliente.wsClienteSoapClient ws = new wsCliente.wsClienteSoapClient();
-            ws.insertar_cliente(txtNombre.Text, txtDireccion.Text, txtNit.Text, txtEmail.Text);
+            wsProveedor.wsProveedoresSoapClient ws = new wsProveedor.wsProveedoresSoapClient();
+            ws.insertar_proveedor(txtNombre.Text, int.Parse(txtTelefono.Text), txtEmail.Text);
 
-            DataSet ds = ws.listado_cliente();
+            DataSet ds = ws.listado_proveedores();
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
@@ -38,10 +38,10 @@ namespace proyectoGasolinera
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            wsCliente.wsClienteSoapClient ws = new wsCliente.wsClienteSoapClient();
-            ws.actualizar_cliente(int.Parse(txtID.Text), txtNombre.Text, txtDireccion.Text, txtNit.Text, txtEmail.Text);
+            wsProveedor.wsProveedoresSoapClient ws = new wsProveedor.wsProveedoresSoapClient();
+            ws.actualizar_proveedor(int.Parse(txtID.Text), txtNombre.Text, int.Parse(txtTelefono.Text), txtEmail.Text);
 
-            DataSet ds = ws.listado_cliente();
+            DataSet ds = ws.listado_proveedores();
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
@@ -50,10 +50,10 @@ namespace proyectoGasolinera
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            wsCliente.wsClienteSoapClient ws = new wsCliente.wsClienteSoapClient();
-            ws.eliminar_cliente(int.Parse(txtID.Text));
+            wsProveedor.wsProveedoresSoapClient ws = new wsProveedor.wsProveedoresSoapClient();
+            ws.eliminar_proveedor(int.Parse(txtID.Text));
 
-            DataSet ds = ws.listado_cliente();
+            DataSet ds = ws.listado_proveedores();
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
@@ -64,23 +64,20 @@ namespace proyectoGasolinera
         {
             txtID.Text = GridView1.SelectedRow.Cells[1].Text.ToString();
             txtNombre.Text = GridView1.SelectedRow.Cells[2].Text.ToString();
-            txtDireccion.Text = GridView1.SelectedRow.Cells[3].Text.ToString();
-            txtNit.Text = GridView1.SelectedRow.Cells[4].Text.ToString();
-            txtEmail.Text = GridView1.SelectedRow.Cells[5].Text.ToString();
+            txtTelefono.Text = GridView1.SelectedRow.Cells[3].Text.ToString();
+            txtEmail.Text = GridView1.SelectedRow.Cells[4].Text.ToString();
 
-            lblID.Visible = true;
+            Label4.Visible = true;
             txtID.Visible = true;
             btnGuardar.Enabled = false;
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
         }
-
         public void limpiar()
         {
             txtID.Text = "";
             txtNombre.Text = "";
-            txtDireccion.Text = "";
-            txtNit.Text = "";
+            txtTelefono.Text = "";
             txtEmail.Text = "";
         }
     }

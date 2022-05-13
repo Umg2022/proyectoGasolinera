@@ -261,6 +261,11 @@ namespace proyectoGasolinera
 
             TextBox1.Text = ddEmpleado.SelectedValue;
         }
+
+        protected void ddEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
            
