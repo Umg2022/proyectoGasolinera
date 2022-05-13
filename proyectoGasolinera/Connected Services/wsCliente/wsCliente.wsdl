@@ -68,6 +68,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="buscar_cliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_clienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_clienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="listado_clienteSoapIn">
@@ -94,6 +115,12 @@
   <wsdl:message name="eliminar_clienteSoapOut">
     <wsdl:part name="parameters" element="tns:eliminar_clienteResponse" />
   </wsdl:message>
+  <wsdl:message name="buscar_clienteSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_cliente" />
+  </wsdl:message>
+  <wsdl:message name="buscar_clienteSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_clienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsClienteSoap">
     <wsdl:operation name="listado_cliente">
       <wsdl:input message="tns:listado_clienteSoapIn" />
@@ -110,6 +137,10 @@
     <wsdl:operation name="eliminar_cliente">
       <wsdl:input message="tns:eliminar_clienteSoapIn" />
       <wsdl:output message="tns:eliminar_clienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_cliente">
+      <wsdl:input message="tns:buscar_clienteSoapIn" />
+      <wsdl:output message="tns:buscar_clienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsClienteSoap" type="tns:wsClienteSoap">
@@ -150,6 +181,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="buscar_cliente">
+      <soap:operation soapAction="http://tempuri.org/buscar_cliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsClienteSoap12" type="tns:wsClienteSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -182,6 +222,15 @@
     </wsdl:operation>
     <wsdl:operation name="eliminar_cliente">
       <soap12:operation soapAction="http://tempuri.org/eliminar_cliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_cliente">
+      <soap12:operation soapAction="http://tempuri.org/buscar_cliente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -26,6 +26,7 @@ namespace proyectoGasolinera
             GridView1.DataSource = ds.Tables[0];
             GridView1.AutoGenerateSelectButton = true;
             GridView1.DataBind();
+           
         }
 
         protected void Button2_Click(object sender, EventArgs e)

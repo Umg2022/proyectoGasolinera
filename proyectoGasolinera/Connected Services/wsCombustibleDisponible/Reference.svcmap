@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="9c259931-1276-4e25-8f20-d4cf514a2a11" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="35a31076-a792-49e6-8cb9-23df1a228e4d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/pruebas/pruebas/wsCliente.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/pruebas/pruebas/wsCombustibleDisponible.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="wsCliente.wsdl" MetadataType="Wsdl" ID="54cc0654-aa89-413e-9bc3-5c460e5c6123" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsCliente.asmx?wsdl" />
-    <MetadataFile FileName="wsCliente.disco" MetadataType="Disco" ID="f531dc47-5d5f-48e7-8f4e-8c349762ed1a" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsCliente.asmx?disco" />
+    <MetadataFile FileName="wsCombustibleDisponible.disco" MetadataType="Disco" ID="fca31f43-9e13-4a3a-98ab-e99cf74a8e9a" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsCombustibleDisponible.asmx?disco" />
+    <MetadataFile FileName="wsCombustibleDisponible.wsdl" MetadataType="Wsdl" ID="da36cbe5-e5fc-44b3-baf0-1cc38bc6bc13" SourceId="1" SourceUrl="http://localhost/pruebas/pruebas/wsCombustibleDisponible.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
