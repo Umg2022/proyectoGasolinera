@@ -84,6 +84,7 @@
     <None Include="Connected Services\WServicioWeb\wsUsuario.wsdl" />
     <None Include="Connected Services\wsFormaPago\wsFormaPago.wsdl" />
     <None Include="Connected Services\wsProveedor\wsProveedores.wsdl" />
+    <None Include="Connected Services\wsPuesto\wsPuesto.wsdl" />
     <None Include="Connected Services\wsSucursal\wsSucursal.wsdl" />
     <None Include="Connected Services\wsTipoCombustible\wsTipoCombustible.wsdl" />
     <None Include="Connected Services\wsEmpleado\wsEmpleado.wsdl" />
@@ -173,11 +174,22 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\wsPuesto\wsPuesto.disco" />
+    <None Include="Connected Services\wsPuesto\configuration91.svcinfo" />
+    <None Include="Connected Services\wsPuesto\configuration.svcinfo" />
+    <None Include="Connected Services\wsPuesto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="frmAbastecimiento.aspx" />
+    <Content Include="frmCliente.aspx" />
+    <Content Include="frmEmpleado.aspx" />
     <Content Include="frmfac.aspx" />
     <Content Include="frmFactura.aspx" />
+    <Content Include="frmFormaPago.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmMenu.aspx" />
+    <Content Include="frmPuestos.aspx" />
     <Content Include="frmSucursal.aspx" />
     <Content Include="frmTipoCombustible.aspx" />
     <Content Include="frmTipoUsuario.aspx" />
@@ -223,6 +235,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\wsPuesto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\wsSucursal\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +277,20 @@
     <Compile Include="frmAbastecimiento.aspx.designer.cs">
       <DependentUpon>frmAbastecimiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmCliente.aspx.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCliente.aspx.designer.cs">
+      <DependentUpon>frmCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpleado.aspx.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEmpleado.aspx.designer.cs">
+      <DependentUpon>frmEmpleado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmfac.aspx.cs">
       <DependentUpon>frmfac.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,6 +305,13 @@
     <Compile Include="frmFactura.aspx.designer.cs">
       <DependentUpon>frmFactura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frmFormaPago.aspx.cs">
+      <DependentUpon>frmFormaPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmFormaPago.aspx.designer.cs">
+      <DependentUpon>frmFormaPago.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.aspx.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +325,13 @@
     </Compile>
     <Compile Include="frmMenu.aspx.designer.cs">
       <DependentUpon>frmMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPuestos.aspx.cs">
+      <DependentUpon>frmPuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmPuestos.aspx.designer.cs">
+      <DependentUpon>frmPuestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmSucursal.aspx.cs">
       <DependentUpon>frmSucursal.aspx</DependentUpon>
@@ -339,6 +384,7 @@
     <WCFMetadataStorage Include="Connected Services\WServicioWeb\" />
     <WCFMetadataStorage Include="Connected Services\wsFormaPago\" />
     <WCFMetadataStorage Include="Connected Services\wsProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\wsPuesto\" />
     <WCFMetadataStorage Include="Connected Services\wsSucursal\" />
     <WCFMetadataStorage Include="Connected Services\wsTipoCombustible\" />
     <WCFMetadataStorage Include="Connected Services\wsEmpleado\" />
